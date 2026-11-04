@@ -14,7 +14,7 @@ execFileSync(
   { stdio: "inherit" },
 );
 execFileSync("git", ["checkout", ref], { cwd: target, stdio: "inherit" });
-execFileSync("npm", ["ci", "--no-audit", "--no-fund"], {
+execFileSync("npm", ["ci", "--include=dev", "--no-audit", "--no-fund"], {
   cwd: target,
   stdio: "inherit",
 });
