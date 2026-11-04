@@ -2,6 +2,8 @@
 
 Proyecto de Guillermo Pereyra para el Laboratorio 9 de Fullstack Developer Software, SENATI. El backend y [appInventario](https://github.com/gpereyradev/appInventario) son dos repositorios del mismo sistema.
 
+**Aplicación publicada:** https://inventra-gpereyradev.onrender.com
+
 ## Alcance
 
 - Express 5, Sequelize 6, React 19 y Vite 8.
@@ -82,7 +84,7 @@ Render ejecuta `npm ci && npm run build:client` y después `npm start`. El scrip
 
 Variables de producción: `DATABASE_URL`, `JWT_SECRET`, `ADMIN_EMAIL`, `ADMIN_NAME`, `ADMIN_PASSWORD`, `SEED_DEMO`, `NODE_ENV=production`, `PORT` (Render lo proporciona). El servicio usa el plan gratuito. Las credenciales se configuran en Render, no en GitHub. No se aloja la base de datos en el disco efímero de Render.
 
-Al actualizar el frontend, cambia `frontend-ref.txt` por el SHA completo publicado en `appInventario` y sube el cambio al backend. Ese commit activa el despliegue de la aplicación integrada. No hay necesidad de fusionar o eliminar ninguno de tus repositorios.
+Al actualizar el frontend, cambia `frontend-ref.txt` por el SHA completo publicado en `appInventario` y sube el cambio al backend. Con la integración GitHub vinculada, ese commit activa el despliegue. Si el servicio se creó desde una URL pública sin integración Git, usa Manual Deploy en Render para incorporar el commit. No hay necesidad de fusionar o eliminar ninguno de tus repositorios.
 
 ## Pruebas
 

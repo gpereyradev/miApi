@@ -2,12 +2,12 @@
 
 ```mermaid
 erDiagram
-  Categorias ||--o{ Productos : clasifica
+  Categoria ||--o{ Productos : clasifica
   Proveedors ||--o{ Productos : suministra
   Productos ||--o{ Movimientos : registra
   Usuarios ||--o{ Movimientos : realiza
   Movimientos o|--o| Movimientos : revierte
-  Categorias {
+  Categoria {
     int id PK
     string nombre UK
     text descripcion
@@ -61,6 +61,6 @@ erDiagram
   }
 ```
 
-Sequelize agrega `createdAt` y `updatedAt` a las cinco tablas. `revierte_id` es opcional y único: un movimiento puede tener una sola reversión. Las FK de categoría, proveedor, producto y usuario usan restricción de borrado para conservar la integridad. El nombre `Proveedors` es el plural automático de Sequelize para el modelo `Proveedor`.
+Sequelize agrega `createdAt` y `updatedAt` a las cinco tablas. `revierte_id` es opcional y único: un movimiento puede tener una sola reversión. Las FK de categoría, proveedor, producto y usuario usan restricción de borrado para conservar la integridad. Los nombres físicos `Categoria` y `Proveedors` corresponden a la inflexión automática de Sequelize. La interfaz usa las etiquetas en español «Categorías» y «Proveedores».
 
 Invariantes del Kardex: `stock_anterior + cantidad = stock_resultante`; `stock_resultante >= 0`; la suma de todas las cantidades del producto coincide con su stock. Una anulación conserva el original y añade su inverso, por lo que ambos permanecen en el cálculo.
